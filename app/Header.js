@@ -16,7 +16,10 @@ const Header=()=>{
 
         </div>
         <div className="row1"></div>
-        <div className="row4"></div>
+        <div className="row4">
+            <p1>Watch</p1>   
+            
+        </div>
       
       
 </>        
