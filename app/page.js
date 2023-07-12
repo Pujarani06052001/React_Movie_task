@@ -1,11 +1,14 @@
 "use client"
+import React,{useState} from "react";
 import Header from './Header.js';
 import Footer from './Footer.js';
-import p from './globals.css';
 import row from './globals.css';
 import Movie_row from "./Movie_row.js";
-function App() {
-    const people = [{
+import Delete from "./Delete_button.js"
+
+
+
+const people = [{
   id: 0,
   name: 'Dear Zindagi',
   profession: 'Drama',
@@ -72,23 +75,36 @@ function App() {
 
  
 }];
-  return (
-    <>
-    <Header/>
-        {people.map(movie => (
-        <Movie_row
-            data={movie.name}
-            data3={movie.profession}
-            data2={movie.imgage}
+
+const App=()=>{
+    const [data ,setData]=useState(people);
+    function handleDelete(id){
+        const dataIndex = data.filter((movie) => movie.id !== id);
+            setData(dataIndex)
+
+  }
+
+
+    return (
+        <>
+            <Header/>
+            
+            {data.map(movie => (
+            <Movie_row
+                data={movie.name}
+                data3={movie.profession}
+                data2={movie.imgage}
+                onDelete={()=>handleDelete(movie.id)}
        
     />
-))}
+))};
+
     <Footer/>
    
       
     </>
   );
-}
+};
 
 export default App;
 

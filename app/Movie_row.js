@@ -1,4 +1,6 @@
 import App from './page.js';
+import LikeButton from './Like_Dislike.js';
+import Delete from './Delete_button.js'
 const Movie_row=(props)=>{
     return(
         <div className="box1">
@@ -6,21 +8,17 @@ const Movie_row=(props)=>{
 
                 
             <p2>{props.data}</p2>
-            <p3>{props.data3}</p3>
-            <div className="box4">
-                <div className="box5">
-
-                </div>
-                      
-
-                  <div className="box6"></div> 
-                  <div className="box7"></div> 
-                  <div className="box8"></div> 
-             
-                
-                </div>
             
+            <p3>{props.data3}</p3>
+            
+            <div className="box4">
+              
+                    <LikeButton/>
+                    <Delete
+                        {...props}
+                    />
 
+            </div>
           </div>
             <div className="box2"> 
                 <img src={props.data2}/>

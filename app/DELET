@@ -1,0 +1,15 @@
+const Delet=()=>{
+    function handleDelete(id){
+    
+    
+    
+    
+    
+    }
+    return
+            <img onclik={()=>{
+            
+                handleDelete(id)
+            }}
+ 
+}

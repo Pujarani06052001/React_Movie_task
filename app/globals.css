@@ -62,7 +62,7 @@ p{
 .box1{ 
     border:solid 2px yellow;
     background:#272734;
-    width: 960px;
+    width: 870px;
     height: 360px;
     margin:auto;
     
@@ -87,43 +87,50 @@ p{
 .box4{ 
     border:solid 2px blue;
     background:#272734;
-    height: 50px;
+    height: 40px;
     float:left;
     width: 655px;
-    margin-top:205px;   
+    margin-top:215px;   
  
 }
 .box5{ 
-    color:#272734;
-    border:solid 2px yellow;
+    
     background:#272734;
-    height: 50px;
-    width: 55px;
+    border:solid 2px yellow;
+    height: 40px;
+    width: 50px;
     float:left;
 }
 .box6{ 
-    border:solid 2px yellow;
     background:#272734;
-    height: 50px;
-    width: 55px;
-    float:right;
-  
+    border:solid 2px yellow;
+    height: 40px;
+    width: 50px;
+    float:left;
 }
 .box7{ 
-    border:solid 2px yellow;
     background:#272734;
-    height: 50px;
-    width: 55px;
+    border:solid 2px yellow;
+    height: 40px;
+    width: 50px;
     float:left;
 }
 .box8{ 
-    border:solid 2px yellow;
     background:#272734;
-    height: 50px;
-    width: 55px;
+    border:solid 2px yellow;
+    height: 40px;
+    width: 50px;
     float:left;
 }
-
+.a{
+    float:right;
+}
+p4{
+    line-height: 45px;
+    margin-left: 19px;
+    background:#272734;
+    
+}
 
 .row_0{
 
@@ -131,6 +138,10 @@ p{
     height: 40px;
     width: 100%; 
    
+}
+.h1{
+    margin-top:100px;
+
 }
 .row_1{
 
