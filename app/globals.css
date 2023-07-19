@@ -1,10 +1,13 @@
 *{
-    background:black;
+    background:#0E0E15;
 
 }
 p{
   position: relative;
   color:white;
+  background:#272734;
+  text-align: center;
+
 }
 .row{
     background:#0E0E15;
@@ -39,7 +42,7 @@ p{
 }
 .row4{
     background:#272734;
-    border:solid 2px blue;
+    border:solid 2px skyblue;
     height:40px; 
     width:100%;
     
@@ -59,10 +62,10 @@ p{
     float:left;
 }
 
-.box1{ 
-    border:solid 2px yellow;
+.row_w{ 
+    border:solid 2px skyblue;
     background:#272734;
-    width: 870px;
+    width: 1106px;
     height: 360px;
     margin:auto;
     
@@ -70,54 +73,55 @@ p{
    
 }
 .box2{ 
-    border:solid 2px yellow;
+    border:solid 2px skyblue;
     background:#272734;
     width: 270px;
     height: 300px;
  
 }
 .box3{ 
-    border:solid 2px blue;
+    border:solid 2px skyblue;
     background:#272734;
-    width: 660px;
+    width: 830px;
     height: 300px;
     float:right;
  
 }
 .box4{ 
-    border:solid 2px blue;
+    border:solid 2px skyblue;
     background:#272734;
     height: 40px;
     float:left;
-    width: 655px;
-    margin-top:215px;   
+    width: 828px;
+    margin-top:150px;   
  
 }
 .box5{ 
-    
+    color:white;
     background:#272734;
-    border:solid 2px yellow;
+    border:solid 2px skyblue;
     height: 40px;
     width: 50px;
     float:left;
 }
 .box6{ 
+
     background:#272734;
-    border:solid 2px yellow;
+    border:solid 2px skyblue;
     height: 40px;
     width: 50px;
     float:left;
 }
 .box7{ 
     background:#272734;
-    border:solid 2px yellow;
+    border:solid 2px skyblue;
     height: 40px;
     width: 50px;
     float:left;
 }
 .box8{ 
     background:#272734;
-    border:solid 2px yellow;
+    border:solid 2px skyblue;
     height: 40px;
     width: 50px;
     float:left;
@@ -128,7 +132,8 @@ p{
 p4{
     line-height: 45px;
     margin-left: 19px;
-    background:#272734;
+   
+    color:red;
     
 }
 
@@ -137,16 +142,14 @@ p4{
     background:#272734;
     height: 40px;
     width: 100%; 
+    
    
 }
-.h1{
-    margin-top:100px;
 
-}
 .row_1{
 
     background:#272734;
-    height: 40px;
+    height: 45px;
     width: 100%; 
    
 }
@@ -191,9 +194,10 @@ p4{
     float:right;
     padding-right:10px;
     margin-right: 16px;
-   
-
     
+}
+.movie1{
+        background:#272734;
 }
 .col2{
     background:#272734;
@@ -213,12 +217,14 @@ p1{
     font-size: 25px;
     margin-left:270px;   
 }
-p2{
+h1{
     background:#272734;
     color:#F3F3F3;
     font-size: 36px;
     font-family: Kanit;
     text-transform: capitalize; 
+    margin-bottom:20px;
+    margin-left:26px;
 
 }
 p3{
@@ -228,6 +234,11 @@ p3{
 
     
 }  
+p5{
+    background:#272734;
+    color:#F3F3F3;
+    margin-left:26px;
+} 
    
 .col_1{
 
@@ -254,10 +265,24 @@ p3{
 }
 
 
+.vote{
+    border:skyblue 2px solid;
+    height:200px;
+    width:200px;
+    
 
+}
 
-
-
+.row6{
+    border:skyblue 2px solid;
+    height:452px;
+    Width:1106px;
+    margin:auto;
+}
+.movie_img{
+    width:270px;
+    height:300px;
+}
 
 
 

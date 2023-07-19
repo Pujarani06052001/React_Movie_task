@@ -1,115 +1,157 @@
 "use client"
 import React,{useState} from "react";
 import Header from './Header.js';
+import Movie_row from "./Movie_row.js";
+import Form from './Add_movie_form';
 import Footer from './Footer.js';
 import row from './globals.css';
-import Movie_row from "./Movie_row.js";
-import Delete from "./Delete_button.js"
+import Delete from "./Delete_button.js";
 
 
+  
 
 const people = [{
   id: 0,
   name: 'Dear Zindagi',
-  profession: 'Drama',
+  year_time:"2016 • 2h 31m",
+  genres: 'Drama',
   imgage:'dear_zindgi.png',
+  
 }, 
 {
   id: 1,
   name: 'Brave',
-  profession: 'Adventurous, ComedyS',
+  year_time:"2012 • 1h 33m",
+  genres: 'Adventurous, ComedyS',
   imgage:'Brave.png',
+ 
   
 
 }, 
 {
   id: 2,
   name: 'Moana',
-  profession: 'Adventurous, ComedyS',
+  year_time:"2016 • 1h 47m",
+  genres: 'Adventurous, ComedyS',
   imgage:'Moana.png',
+
 }, 
 {
   id: 3,
   name: 'Mulan',
-  profession: 'Adventurous, ComedyS',
+  year_time:"1998 • 1h 27m",
+  genres: 'Adventurous, ComedyS',
   imgage:'Mulan.png',
- 
+  
  }, 
 {
   id: 4,
   name: 'He Named Me Malala',
-  profession: 'Biography, Documentary',
+  year_time:"2015 • 1h 28m",
+  genres: 'Biography, Documentary',
   imgage:'MALALA.png',
+ 
 
  }, 
 {
   id: 5,
   name: 'Soul Surfer',
-  profession: 'Drama,Biography, Family',
+  year_time:"2011 • 1h 52m",
+  genres: 'Drama,Biography, Family',
   imgage:'Soul Surfer2x.png',
+  
  }, 
 {
   id: 6,
   name: 'Bend It Like Beckham',
-  profession: 'Comedy,Drama & Romance',
+  year_time:"2002 • 1h 52m",
+  genres: 'Comedy,Drama & Romance',
   imgage:'Beckham.png',
+ 
  }, 
 {
   id: 7,
   name: 'Into The Wild',
-  profession: 'Adventure,Biography,Drama',
+  year_time:"2007 • 2h 28m",
+  genres: 'Adventure,Biography,Drama',
   imgage:'Into the Wild.png',
+ 
  }, 
 {
   id: 8,
   name: 'The Pursuit Of Happyness',
-  profession: 'Drama,Biography',
+  year_time:"2006 • 1h 57m",
+  genres: 'Drama,Biography',
   imgage:'The Pursuit OF HappyNess.png',
+  
  }, 
 {
   id: 9,
   name: 'The Intouchables',
-  profession: 'Drama,Biography,Drama',
+  year_time:"2011 • 1h 52m",
+  genres: 'Drama,Biography,Drama',
   imgage:'The Intouchables.png',
-
+ 
 
  
 }];
 
-const App=()=>{
-    const [data ,setData]=useState(people);
-    function handleDelete(id){
-        const dataIndex = data.filter((movie) => movie.id !== id);
-            setData(dataIndex)
-
-  }
 
 
-    return (
-        <>
-            <Header/>
-            
-            {data.map(movie => (
-            <Movie_row
-                data={movie.name}
-                data3={movie.profession}
-                data2={movie.imgage}
-                onDelete={()=>handleDelete(movie.id)}
-       
-    />
-))};
 
-    <Footer/>
-   
-      
-    </>
-  );
+const App = () => {
+  const [data, setData] = useState(people); 
+  const [voteCount, setVoteCount] = useState({});
+
+  const handleLike = (id) => {
+    setVoteCount((prevVotes) => {
+      const updatedVotes = { ...prevVotes };
+      updatedVotes[id] = (updatedVotes[id] || 0) + 1;
+      return updatedVotes;
+    });
+  };
+
+  const handleDislike = (id) => {
+    setVoteCount((prevVotes) => {
+      const updatedVotes = { ...prevVotes };
+      updatedVotes[id] = (updatedVotes[id] || 0) - 1;
+      return updatedVotes;
+    });
+  };
+
+  const handleDelete = (id) => {
+    setData((prevData) => prevData.filter((movie) => movie.id !== id));
+  };
+
+  const sortedData = data.sort((a, b) => {
+    const like = voteCount[a.id] || 0;
+    const dislike = voteCount[b.id] || 0;
+    return dislike - like;
+  });
+
+  return (
+  <>
+    <Header /> {/* Add the closing parenthesis here */}
+    {sortedData.map((movie) => (
+      <Movie_row
+        key={movie.id}
+        data={movie.name}
+        data4={movie.year_time}
+        data3={movie.genres}
+        data2={movie.imgage}
+        onDelete={() => handleDelete(movie.id)}
+        handleLike={() => handleLike(movie.id)}
+        handleDislike={() => handleDislike(movie.id)}
+        voteCount={voteCount[movie.id]}
+      />
+    ))}
+    <Form />
+    <Footer />
+  </>
+);
 };
 
 export default App;
-
-
-
 
 
 
