@@ -5,7 +5,7 @@ const Header=()=>{
         </div>
         <div className="row3">
             <div className="col">
-                <img src="Icon - Logo.png"     width="100%"style={{background:"#272734",marginbottom:"40px",marfinleft:"20px"}}/>   
+                <img src="Icon - Logo.png"     width="100%"style={{marginbottom:"40px",marfinleft:"20px"}}/>   
             </div>
                 <div className="col1">Movie Hub</div>
                 

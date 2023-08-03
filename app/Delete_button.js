@@ -1,7 +1,7 @@
 const Delete=(props)=>{
     return(
         <div className="a">
-            <button onClick={()=>{props.onDelete()}}><img src="fluent_delete-32-regular.png"/></button>
+            <img onClick={()=>{props.onDelete()}} src="fluent_delete-32-regular.png"/>
         </div>
        
     )

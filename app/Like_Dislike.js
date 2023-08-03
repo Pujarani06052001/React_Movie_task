@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-
 const LikeButton = ({ handleLike, handleDislike, voteCount }) => {
   return (
     <div>

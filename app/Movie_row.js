@@ -13,7 +13,9 @@ const Movie_row = (props) => {
             <h1>{props.data}</h1>
             <p5>
               {props.data4} | {props.data3}
+              {props.data5}
             </p5>
+            
           </div>
           <div className="box4">
             <LikeButton
@@ -27,7 +29,9 @@ const Movie_row = (props) => {
         <div className="box2">
           <img className="movie_img" src={props.data2} />
         </div>
+        <div class="bottom"></div>
       </div>   
+
     </div> 
   );
 };

@@ -3,6 +3,7 @@ import React,{useState} from "react";
 import Header from './Header.js';
 import Movie_row from "./Movie_row.js";
 import Form from './Add_movie_form';
+import Movie_Form from './movie_form';
 import Footer from './Footer.js';
 import row from './globals.css';
 import Delete from "./Delete_button.js";
@@ -11,11 +12,14 @@ import Delete from "./Delete_button.js";
   
 
 const people = [{
+   
   id: 0,
   name: 'Dear Zindagi',
   year_time:"2016 • 2h 31m",
   genres: 'Drama',
   imgage:'dear_zindgi.png',
+  discription:"Description",
+  Discription:"Two ambitious girls, despite their parents' wishes, have their hearts set on careers in professional football.",
   
 }, 
 {
@@ -24,6 +28,7 @@ const people = [{
   year_time:"2012 • 1h 33m",
   genres: 'Adventurous, ComedyS',
   imgage:'Brave.png',
+  discription:"Description",
  
   
 
@@ -34,6 +39,7 @@ const people = [{
   year_time:"2016 • 1h 47m",
   genres: 'Adventurous, ComedyS',
   imgage:'Moana.png',
+  discription:"Description",
 
 }, 
 {
@@ -42,6 +48,7 @@ const people = [{
   year_time:"1998 • 1h 27m",
   genres: 'Adventurous, ComedyS',
   imgage:'Mulan.png',
+  discription:"Description",
   
  }, 
 {
@@ -50,6 +57,7 @@ const people = [{
   year_time:"2015 • 1h 28m",
   genres: 'Biography, Documentary',
   imgage:'MALALA.png',
+  discription:"Description",
  
 
  }, 
@@ -59,6 +67,7 @@ const people = [{
   year_time:"2011 • 1h 52m",
   genres: 'Drama,Biography, Family',
   imgage:'Soul Surfer2x.png',
+  discription:"Description",
   
  }, 
 {
@@ -67,6 +76,7 @@ const people = [{
   year_time:"2002 • 1h 52m",
   genres: 'Comedy,Drama & Romance',
   imgage:'Beckham.png',
+  discription:"Description",
  
  }, 
 {
@@ -83,6 +93,7 @@ const people = [{
   year_time:"2006 • 1h 57m",
   genres: 'Drama,Biography',
   imgage:'The Pursuit OF HappyNess.png',
+  discription:"Description",
   
  }, 
 {
@@ -91,7 +102,8 @@ const people = [{
   year_time:"2011 • 1h 52m",
   genres: 'Drama,Biography,Drama',
   imgage:'The Intouchables.png',
- 
+  discription:"Description",
+  
 
  
 }];
@@ -123,7 +135,7 @@ const App = () => {
     setData((prevData) => prevData.filter((movie) => movie.id !== id));
   };
 
-  const sortedData = data.sort((a, b) => {
+  const Short_Data = data.sort((a, b) => {
     const like = voteCount[a.id] || 0;
     const dislike = voteCount[b.id] || 0;
     return dislike - like;
@@ -131,14 +143,17 @@ const App = () => {
 
   return (
   <>
-    <Header /> {/* Add the closing parenthesis here */}
-    {sortedData.map((movie) => (
+    <Header /> 
+    {Short_Data.map((movie) => (
       <Movie_row
         key={movie.id}
         data={movie.name}
         data4={movie.year_time}
         data3={movie.genres}
         data2={movie.imgage}
+        data5={movie.discription}
+        data6={movie.Description}
+        
         onDelete={() => handleDelete(movie.id)}
         handleLike={() => handleLike(movie.id)}
         handleDislike={() => handleDislike(movie.id)}
@@ -146,6 +161,8 @@ const App = () => {
       />
     ))}
     <Form />
+    <Movie_Form/>
+
     <Footer />
   </>
 );
@@ -155,20 +172,3 @@ export default App;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-  
