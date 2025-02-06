@@ -3,7 +3,7 @@ import React,{useState} from "react";
 import Header from './Header.js';
 import Movie_row from "./Movie_row.js";
 import Form from './Add_movie_form';
-import Movie_Form from './movie_form';
+// import Movie_Form from './movie_form';
 import Footer from './Footer.js';
 import row from './globals.css';
 import Delete from "./Delete_button.js";
@@ -151,7 +151,7 @@ const App = () => {
         data4={movie.year_time}
         data3={movie.genres}
         data2={movie.imgage}
-        data5={movie.discription}
+        data5={movie.discription || movie.Discription} 
         data6={movie.Description}
         
         onDelete={() => handleDelete(movie.id)}
@@ -161,7 +161,7 @@ const App = () => {
       />
     ))}
     <Form />
-    <Movie_Form/>
+    {/* <Movie_Form/> */}
 
     <Footer />
   </>
